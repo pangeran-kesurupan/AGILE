@@ -1,0 +1,7 @@
+# Pastikan ini dijalankan di folder root proyek (P4-AGILE-NimAnda)
+$Root    = Get-Location
+$LogDir  = Join-Path $Root "mock_logs"
+New-Item -ItemType Directory -Path $LogDir -Force | Out-Null
+
+# Timestamp rapi untuk nama file
+$ts = Get-Date -Format 'yyyyMMdd_HHmmss'

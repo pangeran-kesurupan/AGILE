@@ -26,6 +26,7 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@stoplight/spectral-cli": "^6.15.0",
     "eslint": "^9.38.0",
     "jest": "^30.2.0",
     "supertest": "^7.1.4",
@@ -34,4 +35,3 @@
     "typescript": "^5.9.3"
   }
 }
-
