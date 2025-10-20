@@ -9,9 +9,10 @@
   "scripts": {
     "dev:orders": "tsx services/order-service/src/index.ts",
     "dev:notif": "tsx services/notification-service/src/index.ts",
-    "test": "jest",
+    "test": "jest --runInBand",
     "lint:api": "spectral lint openapi/api.yaml",
-    "mock": "prism mock openapi/api.yaml"
+    "mock": "prism mock openapi/api.yaml",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
