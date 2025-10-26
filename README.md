@@ -3,12 +3,18 @@
 Laporan Praktikum #4 – Web Service Development Methodologies (AGILE)
 
 Nama/NIM: 1. Muhammad Riduwan - 230104040080 
+
           2. Noor Ahmad Naufal -  230104040274 
+
           3. Muna Olya - 230104040081 
+
           4. Siti Alayda Azzahro - 230104040084 
+
 Kelas   : TI 23 B
+
 Repo/ZIP: https://github.com/pangeran-kesurupan/AGILE
-Tanggal : <25-October-2025>
+
+Tanggal : 25-October-2025
 
 1. Tujuan
 
