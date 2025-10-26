@@ -1,30 +1,28 @@
 import express from 'express';
 import rateLimit from 'express-rate-limit';
-import { 
-  httpLogger, 
-  correlationId, 
-  requireBearer 
-} from '../../../utils'; // <-- Impor dari utils.ts
+import helmet from 'helmet';
+import { httpLogger, correlationId, requireBearer, errorHandler } from '../../../utils';
 
 const app = express();
 
-// Pasang middleware
-app.use(httpLogger);
+/** Urutan: correlation → helmet → logger → auth → rate limit → routes → error */
 app.use(correlationId);
+app.use(helmet());
+app.use(httpLogger);
 app.use(requireBearer);
-app.use(rateLimit({ windowMs: 60_000, max: 120 })); // 120 reqs per 1 min
+app.use(rateLimit({ windowMs: 60_000, max: 120, standardHeaders: true, legacyHeaders: false }));
 
-// Route
 app.get('/notifications', (req, res) => {
   const limit = Math.max(1, Math.min(100, Number(req.query.limit) || 10));
-  // Buat data dummy
   const data = Array.from({ length: Math.min(1, limit) }).map((_, i) => ({
     id: `n${i + 1}`,
     type: 'ORDER_CREATED',
     message: 'Order created successfully',
     createdAt: new Date().toISOString(),
   }));
-  res.json({ data, total: data.length }); // <-- Balikkan 200 Sukses
+  res.json({ data, total: data.length });
 });
+
+app.use(errorHandler);
 
 export default app;

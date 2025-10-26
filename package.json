@@ -8,11 +8,14 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "typecheck": "tsc -noEmit",
+    "typecheck": "tsc -p . --noEmit",
     "build": "rimraf dist && tsc -p tsconfig.json",
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
-    "test": "jest --ci --runInBand"
+    "test": "jest --config jest.config.cjs --runInBand",
+    "lint:api": "spectral lint openapi/api.yaml",
+    "dev:orders": "tsx services/order-service/src/server.ts",
+    "dev:notif": "tsx services/notification-service/src/server.ts"
   },
   "keywords": [],
   "author": "",
