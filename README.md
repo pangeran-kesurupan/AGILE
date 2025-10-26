@@ -18,6 +18,14 @@ Repo/ZIP: https://github.com/pangeran-kesurupan/AGILE
 
 Tanggal : 25-October-2025
 
+## Run & Test
+
+npm ci
+npm run dev:orders    # http://127.0.0.1:5002
+npm run dev:notif     # http://127.0.0.1:5003
+npm test              # 2 passed, 5 tests
+npx spectral lint openapi/api.yaml
+
 1. Tujuan
 
   Mendemonstrasikan siklus Agile (Mini-Sprint) untuk layanan web:
