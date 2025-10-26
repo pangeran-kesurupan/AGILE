@@ -1,3 +1,5 @@
+[![ci](https://github.com/pangeran-kesurupan/AGILE/actions/workflows/ci.yml/badge.svg)](https://github.com/pangeran-kesurupan/AGILE/actions/workflows/ci.yml)
+
 PM4
 1. Muhammad Riduwan 230104040080 (nim)
 2. Noor Ahmad Naufal 230104040274 (nim)
